@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>NOTA PENGIRIMAN</h1>
+            <table class="table col-4">
+                <tr>
+                    <th>Nama lengkap Pengirim</th>
+                    <td id="output-nama-pengirim"></td>
+                </tr>
+                <tr>
+                    <th>Asal Negara</th>
+                    <td id="output-negara-pengirim"></td>
+                </tr>
+                <tr>
+                    <th>No Telepon</th>
+                    <td id="output-telepon-pengirim"></td>
+                </tr>
+                <tr>
+                    <th>Nama Barang</th>
+                    <td id="output-nama-barang"></td>
+                </tr>
+                <tr>
+                    <th>Berat Barang</th>
+                    <td id="output-berat-barang"></td>
+                </tr>
+                <tr>
+                    <th>Nama lengkap Penerima</th>
+                    <td id="output-nama-penerima"></td>
+                </tr>
+                <tr>
+                    <th>Negara Penerima</th>
+                    <td id="output-negara-penerima"></td>
+                </tr>
+                <tr>
+                    <th>No Telepon</th>
+                    <td id="output-telepon-penerima"></td>
+                </tr>
+                <tr>
+                    <th>Jenis Pengiriman</th>
+                    <td id="output-jenis"></td>
+                </tr>
+                <tr>
+                    <th>Total Biaya</th>
+                    <td id="output-total-biaya"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    const params = new Proxy(new URLSearchParams(window.location.search),{
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+
+const {negara, namakamu, telepon, namabarang, beratbarang, namapenerima, negarapenerima, teleponpenerima, jenispengiriman} = params;
+
+    console.log(params.namakamu);
+    console.log(params.negara);
+    console.log(params.telepon);
+    console.log(params.namabarang);
+    console.log(params.beratbarang);
+    console.log(params.namapenerima);
+    console.log(params.negarapenerima);
+    console.log(params.teleponpenerima);
+    console.log(params.jenispengiriman);
+
+
+    document.getElementById('output-nama-pengirim').innerHTML = namakamu;
+    document.getElementById('output-negara-pengirim').innerHTML = negara;
+    document.getElementById('output-telepon-pengirim').innerHTML = telepon;
+    document.getElementById('output-nama-barang').innerHTML = namabarang;
+    document.getElementById('output-berat-barang').innerHTML = beratbarang;
+    document.getElementById('output-nama-penerima').innerHTML =namapenerima;
+    document.getElementById('output-negara-penerima').innerHTML = negarapenerima;
+    document.getElementById('output-telepon-penerima').innerHTML = teleponpenerima;
+    document.getElementById('output-jenis').innerHTML = jenispengiriman;
+    document.getElementById('output-total-biaya').innerHTML = biaya;
+</script>
+</body>
+</html>
